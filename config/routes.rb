@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  mount LetterOpenerWeb::Engine, at: "/email" if Rails.env.development?
+  #for heroku
+  # mount LetterOpenerWeb::Engine, at: "/email"
 end
