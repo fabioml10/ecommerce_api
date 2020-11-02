@@ -3,4 +3,14 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/email" if Rails.env.development?
   #for heroku
   # mount LetterOpenerWeb::Engine, at: "/email"
+
+  namespace :admin do
+    namespace :v1 do
+    end
+  end
+
+  namespace :storefront do
+    namespace :v1 do
+    end
+  end
 end
