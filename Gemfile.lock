@@ -90,6 +90,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    jbuilder (2.10.1)
+      activesupport (>= 5.0.0)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.7.0)
@@ -210,6 +212,7 @@ DEPENDENCIES
   devise_token_auth (~> 1.1.4)
   factory_bot_rails
   faker
+  jbuilder (~> 2.7)
   letter_opener
   letter_opener_web (~> 1.0)
   listen (~> 3.2)
