@@ -9,13 +9,6 @@ module Admin::V1
 
     before_action :restrict_access_for_admin!
 
-    # def render_error(message: nil, fields: nil, status: :unprocessable_entity)
-    #   errors = {}
-    #   errors['message'] = message if message.present?
-    #   errors['fields'] = fields if fields.present?
-    #   render json: { errors: errors }, status: status
-    # end
-
     rescue_from ForbiddenAccess do
       render_error(message: "Forbidden access.", status: :forbidden)
     end
