@@ -3,6 +3,6 @@ FactoryBot.define do
     code { Faker::Commerce.unique.promotion_code(digits: 6) }
     status { %i(active inactive).sample }
     discount_value { rand(5.00..50.00) }
-    due_date { "2020-11-10 00:22:31" }
+    due_date { Time.zone.now + 1.day }
   end
 end
