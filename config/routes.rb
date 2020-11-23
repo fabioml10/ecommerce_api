@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'home', to: 'home#index'
       resources :categories
       resources :coupons
+      resources :games
     end
   end
 
