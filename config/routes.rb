@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :coupons
       resources :games
       resources :products
+      resources :system_requirements
     end
   end
 
