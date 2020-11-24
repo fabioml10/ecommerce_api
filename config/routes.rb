@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'home', to: 'home#index'
       resources :categories
+      resources :coupons
+      resources :games
+      resources :products
+      resources :system_requirements
     end
   end
 

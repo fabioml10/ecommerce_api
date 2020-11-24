@@ -12,4 +12,6 @@ RSpec.describe ProductCategory, type: :model do
   # it { is_expected.to validate_presence_of(:productable)}
   it { is_expected.to belong_to :product}
   it { is_expected.to belong_to :category}
+
+  it_behaves_like "paginatable concern", :product_category
 end
