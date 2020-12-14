@@ -8,6 +8,13 @@ RSpec.describe "User::V1::Categories as without authentication", type: :request 
     include_examples "unauthenticated_access"
   end
 
+  context "GET /categories/:id" do
+    let!(:category) { create(:category) }
+    let(:url) { "/admin/v1/categories/#{category.id}"}
+    before(:each) {get url}
+    include_examples "unauthenticated_access"
+  end
+
   context "POST /categories" do
     let(:url) { "/admin/v1/categories" }
     before(:each) {post url}

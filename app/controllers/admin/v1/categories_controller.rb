@@ -1,10 +1,12 @@
 module Admin::V1
   class CategoriesController < ApiController
-    before_action :set_category, only: [:update, :destroy]
+    before_action :set_category, only: [:show, :update, :destroy]
 
     def index
-      @categories = Category.all
+      @categories = load_categories
     end
+
+    def show; end
 
     def create
       @category = Category.new(category_params)
@@ -37,6 +39,15 @@ module Admin::V1
         render :show
       rescue
         render_error(fields: @category.errors.messages)
+      end
+
+      def load_category
+        @category = category.find(params[:id])
+      end
+
+      def load_categories
+        permittted = params.permit({search: :name}, {order: {}}, :page, :length)
+        Admin::ModelLoadingService.new(Category.all, permittted).call
       end
   end
 end
