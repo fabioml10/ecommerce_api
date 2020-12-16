@@ -1,3 +1,4 @@
 json.product do
-  json.(@product, :id, :name, :description, :price, :productable_type, :productable_id)
+  json.partial! @product
+  json.partial! @product.productable
 end
